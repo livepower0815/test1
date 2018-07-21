@@ -61,5 +61,27 @@ body {
 	border:2px solid black;
 	margin: 3px;
 	border-radius: 3px;
+	
+}
+.list li a {
+	color: red;
+	float: right;
+}
+.color0 {
+	background: rgb(248, 240, 171);
+}
+.color1 {
 	background: rgb(196, 222, 243);
+}
+.color2 {
+	background: rgb(248, 240, 171);
+}
+.color3 {
+	background: rgb(248, 215, 171);
+}
+.color4 {
+	background: rgb(248, 183, 171);
+}
+.color5 {
+	background: rgb(248, 171, 171);
 }
