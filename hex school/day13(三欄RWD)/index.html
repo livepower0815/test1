@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bootstrap 4</title>
+    <!-- bootstrap 4 css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .box {
+            height: 150px;
+            background: rgb(71, 7, 155);
+            color: white;
+        }
+
+        .line1 {
+            position: relative;
+        }
+
+        .line1:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 33.333333333%;
+            transform: translateX(-50%);
+            width: 5px;
+            background: rgb(236, 161, 161);
+            border-radius: 2px;
+        }
+
+        .line2 {
+            position: relative;
+        }
+
+        .line2::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 66.6666666666%;
+            transform: translateX(-50%);
+            width: 5px;
+            background: rgb(236, 161, 161);
+            border-radius: 2px;
+        }
+
+        @media (max-width: 575px) {
+            .line1:after,
+            .line2::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid mt-3 line1">
+        <div class="row line2">
+            <div class="col-sm-4 mt-3">
+                <div class="box"></div>
+            </div>
+            <div class="col-sm-4 mt-3">
+                <div class="box"></div>
+            </div>
+            <div class="col-sm-4 mt-3">
+                <div class="box"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 下面是產生假圖的URL -->
+
+    <!-- <img src="http://fakeimg.pl/300/">
+    <img src="http://fakeimg.pl/250x100/">
+    <img src="http://fakeimg.pl/250x100/ff0000/">
+    <img src="http://fakeimg.pl/350x200/ff0000/000">
+    <img src="http://fakeimg.pl/350x200/?text=Hello">
+    <img src="http://fakeimg.pl/350x200/?text=World&font=lobster"> -->
+
+
+    <!-- bootstrap 4 js -->
+
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

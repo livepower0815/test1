@@ -1,0 +1,117 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a:hover ,a:visited ,a:active ,a:link {
+    text-decoration: none;
+}
+
+body {
+	background-color: rgb(172, 236, 201);
+
+
+	font-size: 30px;
+}
+
+
+.wrap {
+	margin: 0 auto ;
+	max-width: 1200px ;
+	background: rgb(175, 18, 18);
+	padding-bottom: 5px;
+}
+.menu {
+	width: 28%;
+	height: 400px;
+	margin: 1%;
+	background: rgb(88, 179, 3);
+	float: left ;
+	position: relative;
+}
+.menu ul {
+	opacity: 0;
+	background: rgb(190, 189, 189);
+	width: 150px;
+	transition: 0.2s;
+	position: absolute;
+	left: 150px;
+}
+.menu:active ul {
+	opacity: 1;
+}
+.content {
+	width: 68%;
+	height: 400px;
+	margin: 1%;
+	background: rgb(0, 139, 219);
+	float: left;
+}
+@media ( max-width : 500px ) {
+	.content , .menu {
+		width: 98%;
+	}
+}
+footer {
+	clear: both;
+	background: rgb(206, 200, 200);
+	color : black;
+	margin: 2%;
+}
+.box {
+	width: 50px;
+	height: 50px;
+	background: rgb(219, 69, 0);
+	font-size: 18px;
+	cursor: pointer;
+	transition: 0.2s;
+	margin: 10px;
+}
+.box:active {
+	background: rgb(76, 0, 128);
+	color: blanchedalmond;
+}
+

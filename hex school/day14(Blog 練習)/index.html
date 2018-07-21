@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Blog</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
+        crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: verdana, Times New Roman, "微軟正黑體";
+            background: rgb(201, 226, 240);
+        }
+
+        .breadcrumb {
+            background-color: transparent;
+        }
+
+        .fwb {
+            font-weight: bold !important;
+        }
+
+        .img64 {
+            width: 64px;
+            height: 64px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-street-view"></i> 部落格
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-home"></i> 首頁
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-wrench"></i> 功能</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-dollar-sign"></i> 價格</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb pl-0">
+                <li class="breadcrumb-item">
+                    <a href="#">首頁(Home)</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="#">社群</a>
+                </li>
+                <li class="breadcrumb-item">部落格(Blog)</li>
+            </ol>
+        </nav>
+        <h1 class="fwb">Bootstrap 4 繁體中文手冊</h1>
+        <div class="row">
+            <div class="col-sm-8">
+                <article>
+                    <div class="my-2 text-secondary">
+                        <small>
+                            <span class="mr-3">
+                                <i class="fas fa-user-circle"></i> 陳宏宇</span>
+                            <span class="mr-3">
+                                <i class="fas fa-calendar-alt"></i> 2018/3/17</span>
+                            <span class="mr-3">
+                                <i class="fas fa-tags"></i> event</span>
+                        </small>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque rerum maiores, iusto facere dolor expedita
+                        odit aut corporis commodi maxime.
+                    </p>
+                    <h2 class="text-secondary fwb">Bootstrap 4 的特色</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque rerum maiores, iusto facere dolor expedita
+                        odit aut corporis commodi maxime.</p>
+                    <ul>
+                        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque rerum maiores, iusto facere dolor
+                            expedita odit aut corporis commodi maxime.
+                        </li>
+                        <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab officia accusamus modi ipsa totam nostrum
+                            recusandae quisquam nulla minima. Maiores veritatis non reprehenderit reiciendis esse doloribus
+                            cum ducimus quidem deleniti.
+                            <img class="img-fluid rounded" src="https://images.unsplash.com/photo-1490645935967-10de6ba17061" alt="美食照片">
+                        </li>
+                    </ul>
+                </article>
+                <div class="card">
+                    <div class="card-header fwb">
+                        留言回覆
+                    </div>
+                    <div class="card-body">
+                        <div class="media mb-5">
+                            <img class="mr-3 img64" src="https://randomuser.me/api/portraits/women/60.jpg" alt="Generic placeholder image">
+                            <div class="media-body">
+                                <h5 class="mt-0">同學1號</h5>
+                                <div class="form-group">
+                                    <textarea class="form-control" rows="3"></textarea>
+                                    <button class="btn btn-light btn-block">comment</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="media mb-5">
+                            <img class="mr-3 img64" src="https://randomuser.me/api/portraits/women/60.jpg" alt="Generic placeholder image">
+                            <div class="media-body">
+                                <h5 class="mt-0">同學2號</h5>
+                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in
+                                vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.
+                                Donec lacinia congue felis in faucibus.
+                            </div>
+                        </div>
+                        <div class="media mb-5">
+                            <img class="mr-3 img64" src="https://randomuser.me/api/portraits/women/60.jpg" alt="Generic placeholder image">
+                            <div class="media-body">
+                                <h5 class="mt-0">同學3號</h5>
+                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in
+                                vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.
+                                Donec lacinia congue felis in faucibus.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-4">
+                <h2 class="text-secondary fwb">
+                    Tags
+                </h2>
+                <a href="#" class="badge badge-info">
+                    <i class="fas fa-tags"></i> 資訊</a>
+                <a href="#" class="badge badge-info">
+                    <i class="fas fa-tags"></i> 海鮮</a>
+                <a href="#" class="badge badge-info">
+                    <i class="fas fa-tags"></i> 美食</a>
+                <a href="#" class="badge badge-info">
+                    <i class="fas fa-tags"></i> 旅遊</a>
+                <a href="#" class="badge badge-info">
+                    <i class="fas fa-tags"></i> 攻略</a>
+                <a href="#" class="badge badge-info">
+                    <i class="fas fa-tags"></i> 景點介紹</a>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-dark py-4 mt-3 text-light">
+        <div class="container d-flex  justify-content-between">
+            <div class="align-self-center">陳宏宇的Blog</div>
+            <div>
+                <a href="#" class="text-warning mr-3" style="font-size : 30px ;"><i class="fab fa-facebook-square"></i></a>
+                <a href="#" class="text-warning mr-3" style="font-size : 30px ;"><i class="fab fa-twitter-square"></i></a>
+                <a href="#" class="text-warning mr-3" style="font-size : 30px ;">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

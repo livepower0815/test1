@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>形象網頁</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
+        crossorigin="anonymous"></script>
+    <style>
+        .bg-red {
+            background: rgb(189, 12, 12);
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        .carousel-item-h {
+            height: 500px;
+        }
+
+        .bg-cover {
+            background-size: cover;
+            background-position: center center;
+        }
+
+        .carousel-caption {
+            background: rgba(0, 0, 0, 0.575);
+            border-radius: 5px;
+        }
+
+        .p-rel {
+            position: relative;
+        }
+
+        .p-abs {
+            position: absolute;
+        }
+        @media (max-width: 767px) {
+            .bg-gray {
+                background: rgba(0, 0, 0, 0.575);
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- banner and nav -->
+
+    <div class="py-2 bg-red">
+        <div class="container text-right">
+            <a href="#">
+                <i class="fab fa-facebook-square text-warning mr-3"></i>
+            </a>
+            <a href="#">
+                <i class="fab fa-twitter-square text-warning"></i>
+            </a>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-md navbar-dark bg-red">
+        <div class="container">
+            <a class="navbar-brand text-warning" href="#">桃園厚切牛排</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link text-warning" href="#">首頁
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-warning" href="#">連結</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-warning" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            其他
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-md-0">
+                    <button class="btn btn-outline-warning" type="button">login</button>
+                    <button class="btn btn-outline-warning ml-3" type="button">register</button>
+                </form>
+            </div>
+        </div>
+
+    </nav>
+
+    <!-- carousel 輪播圖片 -->
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active carousel-item-h bg-cover" style="background-image: url('img/steak01.jpg')">
+                <div class="carousel-caption d-none d-md-block px-3">
+                    <h5>第一張看起來很好吃的牛排圖片</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus suscipit exercitationem fuga inventore
+                        provident deleniti iste ea voluptate. Necessitatibus tempora animi dolorum quibusdam dolor, amet
+                        est unde inventore ad qui quisquam voluptates nobis atque numquam. Quis fugiat consequuntur ipsa
+                        fuga!
+                    </p>
+                </div>
+            </div>
+            <div class="carousel-item carousel-item-h bg-cover" style="background-image: url('img/steak02.jpg')">
+                <div class="carousel-caption d-none d-md-block px-3">
+                    <h5>第二張看起來很好吃的牛排圖片</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus suscipit exercitationem fuga inventore
+                        provident deleniti iste ea voluptate. Necessitatibus tempora animi dolorum quibusdam dolor, amet
+                        est unde inventore ad qui quisquam voluptates nobis atque numquam. Quis fugiat consequuntur ipsa
+                        fuga!
+                    </p>
+                </div>
+            </div>
+            <div class="carousel-item carousel-item-h bg-cover" style="background-image: url('img/steak03.jpg')">
+                <div class="carousel-caption d-none d-md-block px-3">
+                    <h5>第三張看起來很好吃的牛排圖片</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus suscipit exercitationem fuga inventore
+                        provident deleniti iste ea voluptate. Necessitatibus tempora animi dolorum quibusdam dolor, amet
+                        est unde inventore ad qui quisquam voluptates nobis atque numquam. Quis fugiat consequuntur ipsa
+                        fuga!
+                    </p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <!-- 三欄式 介紹 -->
+    <div class="bg-dark">
+        <div class="container">
+            <div class="row py-5 text-center">
+                <div class="col-md-4 text-white ">
+                    <i class="fas fa-utensils fa-4x"></i>
+                    <h3 class="my-4">一定要來的理由</h3>
+                    <p class="text-left">在最早的中世紀歐洲，牛肉是皇室貴族食用的肉品，直至十九世紀『牛排』成為美國最喜愛的餐點之一，因此美式牛排漸漸發揚光大，如今品嚐最到位的『牛排』當然是選擇頂級美國牛肉。</p>
+                </div>
+                <div class="col-md-4 text-white">
+                    <i class="fas fa-glass-martini fa-4x"></i>
+                    <h3 class="my-4">吃不到會很想哭</h3>
+                    <p class="text-left">『Uncle Sam´s Kitchen 山姆大叔廚房』為各位做好美國牛肉品質把關的重要角色，並針對美味有著嚴苛的定義，因為美國的牛隻飼養以麥與玉米為主食，故肉質鮮美無草腥味並散發出微微天然香氣，這也是美國牛肉的最大特點。
+                    </p>
+                </div>
+                <div class="col-md-4 text-white">
+                    <i class="fas fa-shopping-cart fa-4x"></i>
+                    <h3 class="my-4">跟好友分享美食</h3>
+                    <p class="text-left">最後由擁有多年牛排料理經驗的職人以碳烤方式與特調醬汁，呈現出令人難以忘懷且意猶未盡的美食佳餚，在美式鄉村與工業風的裝潢中享受優質的用餐氛圍，讓你忘情的舉起酒杯大口品嚐美味牛肉。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 混合式排版介紹 -->
+
+    <section class="container-fluid bg-red">
+        <div class="row p-rel py-5">
+            <div class="col-md-5 p-abs bg-cover" style="background-image: url('img/grill.jpg');top: 0;bottom: 0;"></div>
+            <div class="container">
+                <div class="col-md-7 ml-auto text-white bg-gray">
+                    <h3>犇牛天婦羅炸蝦</h3>
+                    <p>精選安格斯牛肉，軟嫩肉質佐法式紅酒醬，搭配外皮酥脆的天婦羅炸蝦佐義式奶油白醬，多重美味一次擁有！嚴選粒粒飽滿、鮮美多汁帆立貝，搭配上選美味鮮蝦及豐富魷魚、蟹味絲等海鮮，再佐以清爽鳳梨與鮮味十足的蕃茄海鮮醬，澎湃海鮮的鮮美滋味令人欲罷不能！</p>
+                    <a href="#" class="btn btn-outline-warning">了解更多</a>
+                    <div class="row mt-5">
+                        <div class="col-md-6">
+                            <h3>法式蝦蟹鮑魚菇</h3>
+                            <p>濃郁的法蘭西海鮮白醬搭配肥美的鮮蝦與蟹肉棒，和精選上等的鮑魚菇，口口都是頂級法國味！</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h3>壽喜雪花牛</h3>
+                            <p>嚴選口感柔軟、油花分布均勻飽滿的美國雪花牛，加上滿滿蛋絲，佐以純正日式風味壽喜醬汁，再配上杏鮑菇及新鮮洋蔥、紅椒，豐盛餡料重磅登場！</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <script>
+        const num = 2;
+        var b = 3;
+        // function add () {
+        //     var num = 0;
+        //     num += 3;
+        // }
+        // add();
+        
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

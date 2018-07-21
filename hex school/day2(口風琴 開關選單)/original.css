@@ -1,0 +1,6 @@
+body {
+    background-color: rgb(238, 221, 197);
+}
+li:hover {
+    background-color: brown;
+}

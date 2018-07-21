@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>My page</title>
+    <link href="lightbox2-master/dist/css/lightbox.css" rel="stylesheet">
+<!-- 滑動效果 -->
+    <link rel="stylesheet" href="css/themes/default/default.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/themes/light/light.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/themes/dark/dark.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/themes/bar/bar.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" />
+<!--  .................................... -->
+
+    <link rel="stylesheet" href="original.css">
+</head>
+<body>
+
+<!-- nivo-slider圖片效果 -->
+
+<div class="wrap">
+    <div class="header">
+            <div id="wrapper">          
+                <div class="slider-wrapper theme-default">
+                    <div id="slider" class="nivoSlider">
+                        <img src="images/toystory.jpg" data-thumb="images/toystory.jpg" alt="" />
+                        <a href="http://dev7studios.com"><img src="images/up.jpg" data-thumb="images/up.jpg" alt="" title="This is an example of a caption" /></a>
+                        <img src="images/walle.jpg" data-thumb="images/walle.jpg" alt=""  />
+                        <img src="images/nemo.jpg" data-thumb="images/nemo.jpg" alt="" title="#htmlcaption" />
+                    </div>
+                </div>
+            
+            </div>
+    </div>
+<!-- ............................................................ -->
+
+<!-- lightbox effect 燈箱效果 -->
+    <div class="content">
+        <div class="cart">
+            <ul>
+                <li> <a href="img/dog1.jpg" data-lightbox="image-1" data-title="My caption"><img src="img/dog1.jpg" alt=""></a> </li>
+                <li> <a href="img/dog2.jpg" data-lightbox="image-1" data-title="My caption"><img src="img/dog2.jpg" alt=""></a> </li>
+                <li> <a href="img/dog3.jpg" data-lightbox="image-1" data-title="My caption"><img src="img/dog3.jpg" alt=""></a> </li>
+                <li> <a href="img/dog1.jpg" data-lightbox="image-1" data-title="My caption"><img src="img/dog1.jpg" alt=""></a> </li>
+                <li> <a href="img/dog2.jpg" data-lightbox="image-1" data-title="My caption"><img src="img/dog2.jpg" alt=""></a> </li>
+                <li> <a href="img/dog3.jpg" data-lightbox="image-1" data-title="My caption"><img src="img/dog3.jpg" alt=""></a> </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- ............................. -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.nivo.slider.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+    $('#slider').nivoSlider({ 
+    effect: 'boxRandom',                 // Specify sets like: 'fold,fade,sliceDown' 
+    slices: 15,                       // For slice animations 
+    boxCols: 8,                       // For box animations 
+    boxRows: 4,                       // For box animations 
+    animSpeed: 500,                   // Slide transition speed 
+    pauseTime: 2000,                  // How long each slide will show 
+    startSlide: 0,                    // Set starting Slide (0 index) 
+    directionNav: true,               // Next & Prev navigation 
+    controlNav: true,                 // 1,2,3... navigation 
+    controlNavThumbs: true,          // Use thumbnails for Control Nav 
+    pauseOnHover: true,               // Stop animation while hovering 
+    manualAdvance: false,             // Force manual transitions 
+    prevText: 'Prev',                 // Prev directionNav text 
+    nextText: 'Next',                 // Next directionNav text 
+    randomStart: false,               // Start on a random slide 
+    beforeChange: function(){},       // Triggers before a slide transition 
+    afterChange: function(){},        // Triggers after a slide transition 
+    slideshowEnd: function(){},       // Triggers after all slides have been shown 
+    lastSlide: function(){},          // Triggers when last slide is shown 
+    afterLoad: function(){}           // Triggers when slider has loaded 
+});
+});
+</script>
+<script src="lightbox2-master/dist/js/lightbox.js"></script>
+<script src="original.js"></script>
+</body>
+</html>
