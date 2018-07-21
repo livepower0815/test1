@@ -36,6 +36,7 @@ ulList.addEventListener('click',function(e){
     // console.log(e.target.parentElement);
     
     if(e.target.nodeName == "A"){
+        e.preventDefault();
         e.target.parentElement.style.display = "none";
     }
 });
