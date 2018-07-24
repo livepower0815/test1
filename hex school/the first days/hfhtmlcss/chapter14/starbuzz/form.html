@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The Starbuzz Bean Machine</title>
+    <link type="text/css" rel="stylesheet" href="monkeyform.css">
+  </head>
+  <body>
+
+    <h1>The Starbuzz Bean Machine</h1>
+    <h2>Fill out the form below and click submit to order</h2>
+<form action="http://starbuzzcoffee.com/processorder.php" method="POST">
+  <div class="tablerow">
+  <p>choose your beans:</p>
+  <p><select>
+    <option value="house">House Blend</option>
+    <option value="shade">Shade grown Bolivia Supermo</option>
+    <option value="organic">Organic Guatemala</option>
+    <option value="kenya">Kenya</option>
+  </select></p>
+  </div>
+  <div class="tablerow">
+  <p>Type</p>
+  <p>
+  <input type="radio" name="001" value="Whole">Whole bean<br>
+  <input type="radio" name="001" value="Ground" checked>Ground
+  </p>
+  </div>
+  <div class="tablerow">
+    <p>Number of bags:</p>
+    <p><input type="number" name="bags" min="1" max="5"></p>
+    </div>
+  <div class="tablerow">
+      <p>Must arrive by date:</p>
+      <p><input type="date"></p>
+  </div>
+  <div class="tablerow">
+    <p></p>
+    <fieldset>
+      <legend>Extras</legend>
+    <input type="checkbox" name="extras" value="Gift" checked>Gift wrap<br>
+    <input type="checkbox" name="extras" value="include" checked>include catalog with order
+    </fieldset>
+  </div>
+
+  <div class="tablerow">
+    <p class="heading">Ship to:</p>
+    <p></p>
+  </div>
+
+  <div class="tablerow">
+    <p>Name:</p>
+    <p><input type="text" name="name" required></p>
+  </div>
+
+  <div class="tablerow">
+      <p>Address:</p>
+      <p><input type="text" required></p>
+  </div>
+
+  <div class="tablerow">
+    <p>City:</p>
+    <p><input type="text" required></p>
+  </div>
+
+  <div class="tablerow">
+      <p>State:</p>
+      <p><input type="text"></p>
+  </div>
+
+  <div class="tablerow">
+      <p>Zip:</p>
+      <p><input type="text"></p>
+  </div>
+
+  <div class="tablerow">
+      <p>Phone:</p>
+      <p><input type="tel"></p>
+  </div>
+
+  <div class="tablerow">
+      <p>Customer Comments:</p>
+      <p><textarea name="comments" rows="5" cols="30"></textarea></p>
+  </div>
+
+  <div class="tablerow">
+  <p></p>
+  <p><input type="submit" value="submit this form"></p>
+  </div>
+
+
+</form>
+<div id="box"></div>
+  </body>
+</html>
+

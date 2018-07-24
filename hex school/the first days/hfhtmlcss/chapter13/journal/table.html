@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style type="text/css">
+      td, th {
+        border: 2px solid black;
+        padding:5px;            
+      }
+      table {
+        margin-left: auto;
+        margin-right: auto;
+        border:3px solid black;
+        caption-side:bottom;
+        border-collapse: collapse;
+      }
+      .cellcenter {
+        text-align:center;
+      }
+      .cellright {
+        text-align:right;
+      }
+      th {
+        background-color:#cc6600;
+      }
+      td {
+        background-color:white;
+      }
+      body {
+        padding:100px;
+        background-color: rgb(240, 177, 135);
+      }
+      tr.cellcolor td {
+        background-color:#fcba7a;
+      }
+    </style>
+    <title>Testing Tony's Travels</title>
+  </head>
+  <body>
+ <table>
+   <caption>
+     The cities I visited on my Segway'n USA travels
+   </caption>
+   <tr>
+     <th>City</th>
+     <th>Date</th>
+     <th>Temperature</th>
+     <th>Altitude</th>
+     <th>Population</th>
+     <th>Dinter Rating</th>
+   </tr>
+   <tr>
+     <td>Walla Walla,WA</td>
+     <td class="cellcenter">June 15th</td>
+     <td class="cellcenter">75</td>
+     <td class="cellright">1,204 ft</td>
+     <td class="cellright">29,686</td>
+     <td class="cellcenter">4/5</td>
+   </tr>
+   <tr class="cellcolor">
+    <td>Magic City, ID</td>
+    <td class="cellcenter">June 25th</td>
+    <td class="cellcenter">74</td>
+    <td class="cellright">5,312 ft</td>
+    <td class="cellright">50</td>
+    <td class="cellcenter">3/5</td>
+  </tr>
+  <tr>
+    <td>Bountiful, UT</td>
+    <td class="cellcenter">July 10th</td>
+    <td class="cellcenter">91</td>
+    <td class="cellright">4,226 ft</td>
+    <td class="cellright">41,173</td>
+    <td class="cellcenter">4/5</td>
+  </tr>
+  <tr class="cellcolor">
+    <td>Last Chance, CO</td>
+    <td class="cellcenter">July 23rd</td>
+    <td class="cellcenter">102</td>
+    <td class="cellright">4,780 ft</td>
+    <td class="cellright">265</td>
+    <td class="cellcenter">3/5</td>
+  </tr>
+  <tr>
+    <td rowspan="2">Truth or Consequences, NM</td>
+    <td class="cellcenter">August 9th</td>
+    <td class="cellcenter">93</td>
+    <td rowspan="2" class="cellright">4,242 ft</td>
+    <td rowspan="2" class="cellright">7,289</td>
+    <td class="cellcenter">5/5</td>
+  </tr>
+  <tr>
+    <td class="cellcenter">August 27th</td>
+    <td class="cellcenter">98</td>
+    <td class="cellcenter">4/5</td>
+  </tr>
+  <tr class="cellcolor">
+    <td>Why, AZ</td>
+    <td class="cellcenter">August 18th</td>
+    <td class="cellcenter">104</td>
+    <td class="cellright">860 ft</td>
+    <td class="cellright">480</td>
+    <td class="cellcenter">3/5</td>
+  </tr>
+ </table>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+body {background-color:rgb(255, 229, 194);
+    margin-left:20%;
+    margin-right:20%;
+    border: 5px rgb(56, 5, 5) solid;
+    font-family:sans-serif;
+}
+p {
+  color:maroon;
+  font-family:sans-serif;
+}
+h1 {
+  color:maroon;
+  font-family:sans-serif; 
+}
+.green {
+    color:green;
+}
