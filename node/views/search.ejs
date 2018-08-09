@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" name="searchText" id="searchText">
+    <input type="button" id="sendBtn" value="send value">
+    <script>
+        var text = document.querySelector("#searchText");
+        var send = document.querySelector("#sendBtn");
+        send.addEventListener('click', (e) => {
+            let str = text.value;
+            let xhr =  new XMLHttpRequest();
+            xhr.open('post','/searchList');
+            xhr.setRequestHeader("Content-type","application/json");
+            let myData = JSON.stringify({"content":str});
+            xhr.send(myData);
+            xhr.onload = function(){
+                console.log(xhr.responseText);    
+            };
+
+        });
+    </script>
+</body>
+
+</html>
