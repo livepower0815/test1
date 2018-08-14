@@ -7,15 +7,16 @@ var bodyParser = require('body-parser');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var searchRouter = require('./routes/search');
+var toDoListRouter = require('./routes/toDoList')
 
-var admin = require("firebase-admin");
-
-var serviceAccount = require("path/to/serviceAccountKey.json");
-
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://project-0815.firebaseio.com"
-});
+// load firebase database 
+// var admin = require("firebase-admin");
+// var serviceAccount = require("./project-0815-firebase-adminsdk-p86o9-f8cd831aaf.json");
+// admin.initializeApp({
+//   credential: admin.credential.cert(serviceAccount),
+//   databaseURL: "https://project-0815.firebaseio.com"
+// });
+// _______________________________
 
 var app = express();
 
@@ -27,24 +28,25 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/search', searchRouter);
-app.post('/searchList',function(req,res){
-  console.log(req.body); 
+app.use('/toDoList', toDoListRouter);
+app.post('/searchList', function (req, res) {
+  console.log(req.body);
   res.send('hello');
 });
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
