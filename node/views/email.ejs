@@ -11,17 +11,21 @@
 <body>
     <h1>welcome to email page</h1>
     <form action="/email/post" method="post">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
         <div>
             <label for="name">姓名一一： </label>
             <input type="text" name="name" id="name">
+            <span style="color:red;"><%= nameNull %></span>
         </div>
         <div>
             <label for="email">電子郵件： </label>
             <input type="email" name="email" id="email">
+            <span style="color:red;"><%= emailNull %></span>
         </div>
         <div>
             <label for="subject">標題一一： </label>
             <input type="text" name="subject" id="subject">
+            <span style="color:red;"><%= subjectNull %></span>
         </div>
         <div>
             <label for="content">訊息內容： </label>
