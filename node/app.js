@@ -5,7 +5,6 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 var session = require('express-session');
-var csrf = require('csurf');
 var flash = require('connect-flash');
 require('dotenv').config();
 
@@ -35,7 +34,6 @@ app.use(session({
   resave: true,
   saveUninitialized: true
 }));
-app.use(csrf({ cookie: true }));
 app.use(flash());
 
 // page list

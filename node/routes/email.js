@@ -1,8 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var mail = require('nodemailer');
+var csrf = require('csurf');
 
-
+router.use(csrf({ cookie: true }));
 
 /* GET email page. */
 router.get('/', function(req, res, next) {
