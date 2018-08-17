@@ -7,7 +7,9 @@ var timeSTR_M = document.querySelector('#timeSTR_M');
 var timeEND_H = document.querySelector('#timeEND_H');
 var timeEND_M = document.querySelector('#timeEND_M');
 var userName = document.querySelector('#userName');
+var reason = document.querySelector('#reason');
 var sendBtn = document.querySelector('#send');
+var passwd = document.querySelector('#passwd');
 var config = {
     apiKey: "AIzaSyA51URP4GCaISanXYdhDolbTyWihmsdrcY",
     authDomain: "project-0815.firebaseapp.com",
@@ -53,17 +55,20 @@ sendBtn.addEventListener('click', (e) => {
     } else if (startNum >= endNum) {
         alert("起始時間不能超過結束時間");
         return false;
+    }else if (passwd.value !== "0830") {
+        alert("認證碼錯誤,請輸入正確的認證碼");
+        return false;
     }
 
     let dateRef = 'meetingRoom/' + year.value + moon.value + day.value + '/' + roomNum.value;
-    let userRef = 'meetingRoom/' + year.value + moon.value + day.value + '/' + roomNum.value + '/' + userName.value;
     database.ref(dateRef).once('value', (snapshot) => {
         dateObj = snapshot.val();
         if (dateObj == null) {
             let obj = {
                 "minTime": startNum,
                 "maxTime": endNum,
-                "userName": userName.value
+                "userName": userName.value,
+                "reason": reason.value
             };
             database.ref(dateRef).push().set(obj);
             return alert('已成功預約');
@@ -82,7 +87,8 @@ sendBtn.addEventListener('click', (e) => {
             let obj = {
                 "minTime": startNum,
                 "maxTime": endNum,
-                "userName": userName.value
+                "userName": userName.value,
+                "reason": reason.value
             };
             database.ref(dateRef).push().set(obj);
             return alert('已成功預約');
