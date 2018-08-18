@@ -7,15 +7,17 @@
     <title>My page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
         crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="all.css">
 </head>
 
 <body>
     <div class="container">
-        <div class="row mt-5 p-4 bg-secondary text-light rounded text-center d-flex justify-content-center">
+        <div class="row mt-5 p-4 bg-secondary text-light rounded d-flex justify-content-center">
 
             <div class="col-lg-5">
-                <div class="h1 mb-3">查詢會議室使用狀況</div>
+                <div class="h1 mb-3 text-center">查詢會議室使用狀況</div>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <label class="input-group-text" for="year">年份：</label>
@@ -104,16 +106,16 @@
                         <option value="VN_Mill-2">VN Mill-2</option>
                     </select>
                 </div>
-                
-                <button id="send" type="button" class="btn btn-primary m-3">查詢預約資料</button>
-                <a href="index.html" class="btn btn-success m-3">回到首頁</a>
+
+
+                <div class="text-center">
+                    <button id="send" type="button" class="btn btn-primary m-3">查詢預約資料</button>
+                    <a href="index.html" class="btn btn-success m-3">回到首頁</a>
+                </div>
+
                 <div id="message" class="h2"></div>
-                <ul id="resultList">
-                    <li>
-                        
-                    </li>
-                    <li></li>
-                    <li></li>
+                <ul class="searchList">
+                    
                 </ul>
             </div>
 

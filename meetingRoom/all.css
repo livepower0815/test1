@@ -65,21 +65,16 @@ body {
 	color: red;
 	float: right;
 }
-.color0 {
-	background: rgb(248, 240, 171);
+.searchList li {
+	background: rgb(255, 255, 255);
+	color: black;
+	font-size:1rem;
+	margin: 20px 0;
+}
+.searchList li button {
+	float: right;
 }
 .color1 {
-	background: rgb(196, 222, 243);
-}
-.color2 {
-	background: rgb(248, 240, 171);
-}
-.color3 {
-	background: rgb(248, 215, 171);
-}
-.color4 {
-	background: rgb(248, 183, 171);
-}
-.color5 {
-	background: rgb(248, 171, 171);
+	background: #17a2b8;
+	color: white;
 }
