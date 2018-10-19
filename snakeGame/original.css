@@ -1,0 +1,16 @@
+body {
+    background-color: rgb(172, 236, 201);
+}
+#myForm {
+    padding: 10px;
+    border:black 2px solid;
+}
+td {
+    width: 13px;
+    height: 13px;
+    border:rgba(238, 217, 217, 0) solid 1px;
+}
+
+.black {
+    background: #000;
+}
