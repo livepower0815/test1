@@ -14,3 +14,30 @@ td {
 .black {
     background: #000;
 }
+
+#box {
+    position: relative;
+}
+#box div {
+    position: absolute;
+    background: rgba(255, 155, 155, 0.452);
+    width: 50px;
+    height: 50px;
+}
+
+#up {
+    left:185px;
+    top:130px;
+}
+#left {
+    left:35px;
+    top:260px;
+}
+#down{
+    left:185px;
+    top:400px;
+}
+#right{
+    left:350px;
+    top:260px;
+}

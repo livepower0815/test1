@@ -1,3 +1,4 @@
+alert("電腦控制:數字鍵 1,2,3,5 \n手機控制:點擊螢幕粉紅框框\n     ....宏宇留")
 var body = document.querySelector("body");
 var snake = document.querySelector("#snake").firstElementChild;
 
@@ -175,3 +176,19 @@ body.addEventListener("keypress", function (e) {
         snakeBody.dir = e.keyCode + "";
     }
 }, false)
+
+body.addEventListener('click',function(e){
+    if (e.target.id == "right") {
+        if (snakeBody.dir == 49) return;
+        snakeBody.dir = 51 + "";
+    } else if (e.target.id == "up") {
+        if (snakeBody.dir == 50) return;
+        snakeBody.dir = 53 + "";
+    } else if (e.target.id == "left") {
+        if (snakeBody.dir == 51) return;
+        snakeBody.dir = 49 + "";
+    } else if (e.target.id == "down") {
+        if (snakeBody.dir == 53) return;
+        snakeBody.dir = 50 + "";
+    }
+},false)
