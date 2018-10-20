@@ -1,4 +1,4 @@
-alert("電腦控制:數字鍵 1,2,3,5 \n手機控制:點擊螢幕粉紅框框\n     ....宏宇留")
+alert("電腦控制:數字鍵 1,2,3,5 \n     ....宏宇留")
 var body = document.querySelector("body");
 var snake = document.querySelector("#snake").firstElementChild;
 
@@ -177,18 +177,36 @@ body.addEventListener("keypress", function (e) {
     }
 }, false)
 
-body.addEventListener('click',function(e){
-    if (e.target.id == "right") {
-        if (snakeBody.dir == 49) return;
-        snakeBody.dir = 51 + "";
-    } else if (e.target.id == "up") {
-        if (snakeBody.dir == 50) return;
-        snakeBody.dir = 53 + "";
-    } else if (e.target.id == "left") {
-        if (snakeBody.dir == 51) return;
-        snakeBody.dir = 49 + "";
-    } else if (e.target.id == "down") {
-        if (snakeBody.dir == 53) return;
-        snakeBody.dir = 50 + "";
+
+function countClientXY(e){
+    let x = 0,y=0;
+    while(e.offsetParent != null) {
+        x += e.offsetLeft;
+        y += e.offsetTop;
+        e = e.offsetParent;
     }
-},false)
+    return {x,y}
+}
+
+
+
+body.addEventListener('click', function (e) {
+    let sx = countClientXY(document.getElementById(snakeBody.start[0])).x + 6;
+    let sy = countClientXY(document.getElementById(snakeBody.start[0])).y + 6;
+    let tx = e.clientX;
+    let ty = e.clientY;
+    
+    if (snakeBody.dir == 49 ||snakeBody.dir ==51) {
+        if(sy>ty){
+            snakeBody.dir = 53;
+        }else if(sy<ty){
+            snakeBody.dir = 50;
+        }
+    }else if (snakeBody.dir == 50 ||snakeBody.dir ==53) {
+        if(sx>tx){
+            snakeBody.dir = 49;
+        }else if(sx<tx){
+            snakeBody.dir = 51;
+        }
+    }
+}, false)
