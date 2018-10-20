@@ -17,6 +17,7 @@ td {
 
 #box {
     position: relative;
+    cursor: pointer;
 }
 #box div {
     position: absolute;
@@ -41,3 +42,4 @@ td {
     left:350px;
     top:260px;
 }
+
