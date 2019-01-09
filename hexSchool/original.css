@@ -52,7 +52,8 @@ a:hover ,a:visited ,a:active ,a:link {
 
 body {
 	background-color: rgb(172, 236, 201);
-	margin: 0 auto ;
-	width: 1000px;
 	font-size: 30px;
+}
+#canvas {
+	padding: 0px 200px;
 }

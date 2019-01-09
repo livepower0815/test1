@@ -69,9 +69,8 @@ function numToDate(num) {
 
 searchList.addEventListener('click', (e) => {
     if (e.target.localName == "button") {
-        let password = prompt("請輸入刪除密碼","");
-        if(password !== "1234567"){
-            alert("密碼錯誤");
+        let password = confirm("確定要刪除？");
+        if(password == false){
             return false;
         }
 

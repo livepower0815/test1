@@ -9,7 +9,6 @@ var timeEND_M = document.querySelector('#timeEND_M');
 var userName = document.querySelector('#userName');
 var reason = document.querySelector('#reason');
 var sendBtn = document.querySelector('#send');
-var passwd = document.querySelector('#passwd');
 var config = {
     apiKey: "AIzaSyA51URP4GCaISanXYdhDolbTyWihmsdrcY",
     authDomain: "project-0815.firebaseapp.com",
@@ -54,9 +53,6 @@ sendBtn.addEventListener('click', (e) => {
         return false;
     } else if (startNum >= endNum) {
         alert("起始時間不能超過結束時間");
-        return false;
-    }else if (passwd.value !== "0830") {
-        alert("認證碼錯誤,請輸入正確的認證碼");
         return false;
     }
 
