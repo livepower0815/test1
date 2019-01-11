@@ -1,42 +1,57 @@
+var app = new Vue({
+    el: '#app',
+    data: {
+        inpHeight: '',
+        inpWeight: '',
+        list: [],
+    },
+    computed: {
+        BMI() {
+            const vm = this;
+            if(vm.inpHeight == '' || vm.inpWeight == '') {
+                return 0.00;
+            }
+            let bmi = vm.inpWeight / ((vm.inpHeight / 100) * (vm.inpHeight / 100))
+            return bmi.toFixed(2);
+        }
+    },
+    methods: {
+        storeBMI() {
+            const vm = this;
+            let bmiStandard;
+            let bmi = vm.BMI;
+            if (vm.BMI < 18.5) {
+                bmiStandard = ["color0", "體重過輕"];
+            } else if (vm.BMI >= 18.5 && vm.BMI < 24) {
+                bmiStandard = ["color1", "正常範圍"];
+            } else if (vm.BMI >= 24 && vm.BMI < 27) {
+                bmiStandard = ["color2", "過重"];
+            } else if (vm.BMI >= 27 && vm.BMI < 30) {
+                bmiStandard = ["color3", "輕度肥胖"];
+            } else if (vm.BMI >= 30 && vm.BMI < 35) {
+                bmiStandard = ["color4", "中度肥胖"];
+            } else {
+                bmiStandard = ["color5", "重度肥胖"];
+            }
+            let BmiItem = {
+                height:vm.inpHeight,
+                weight:vm.inpWeight,
+                BMInum:bmi,
+                bgColor:bmiStandard[0],
+                range:bmiStandard[1],
+            };
+            vm.list.push(BmiItem);
+            localStorage.localList = JSON.stringify(vm.list);
+        },
+        removeList(index) {
+            const vm = this;
+            vm.list.splice(index,1);
+            localStorage.localList = JSON.stringify(vm.list);
+        }
+    },
+    created() {
+        const vm = this;
+        vm.list = JSON.parse(localStorage.localList);
 
-var weight = document.querySelector('#weight');
-var height = document.querySelector('#height');
-var countBtn = document.querySelector('#countBtn');
-var ulList = document.querySelector('.list');
-
-
-countBtn.addEventListener("click",function(){
-    var bmiNum = weight.value / ((height.value/100) * (height.value/100));
-    var el = document.createElement("li");
-    var aLink = document.createElement('a');
-    aLink.setAttribute('href',"#");
-    aLink.textContent = "刪除";
-    var bmiStandard;
-    if (bmiNum < 18.5) {
-        bmiStandard = ["color0","體重過輕"];
-    }else if (bmiNum >= 18.5 && bmiNum < 24){
-        bmiStandard = ["color1","正常範圍"];
-    }else if (bmiNum >= 24 && bmiNum < 27){
-        bmiStandard = ["color2","過重"];
-    }else if (bmiNum >= 27 && bmiNum < 30){
-        bmiStandard = ["color3","輕度肥胖"];
-    }else if (bmiNum >= 30 && bmiNum < 35){
-        bmiStandard = ["color4","中度肥胖"];
-    }else {
-        bmiStandard = ["color5","重度肥胖"];
-    }
-    el.textContent = "體重:"+ weight.value +" 身高:"+ height.value +",你的BMI值是 : " + bmiNum.toFixed(2) + " 屬於 " + bmiStandard[1];
-    el.setAttribute('class',bmiStandard[0]);
-    el.appendChild(aLink);
-    ulList.appendChild(el);
-});
-
-//  點擊刪除LI元件
-ulList.addEventListener('click',function(e){
-    // console.log(e.target.parentElement);
-    
-    if(e.target.nodeName == "A"){
-        e.preventDefault();
-        e.target.parentElement.style.display = "none";
-    }
-});
+    },
+})

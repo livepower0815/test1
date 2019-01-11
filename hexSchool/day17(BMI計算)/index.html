@@ -7,22 +7,33 @@
     <title>My page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
         crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="all.css">
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" id="app">
         <div class="row mt-5 p-4 bg-secondary text-light rounded">
-            <div class="col-sm-6" align="center">
-                <p class="p-3">身高 : <input type="text" name="height" id="height" style="width: 200px;" placeholder="輸入身高 cm"></p>
-                <p class="p-3">體重 : <input type="text" name="weight" id="weight" style="width: 200px;" placeholder="輸入體重 kg"></p>
+            <div class="col-sm-4" align="center">
+                <p class="p-3">身高 : <input v-model="inpHeight" type="text" name="height" id="height" style="width: 150px;" placeholder="單位 cm"></p>
+                <p class="p-3">體重 : <input v-model="inpWeight" type="text" name="weight" id="weight" style="width: 150px;" placeholder="單位 kg"></p>
             </div>
-            <div class="col-sm-6 d-flex align-items-center justify-content-center">
-                <button type="button" class="btn btn-outline-warning btn-lg" id="countBtn">count BMI</button>            </div>
+            <div class="col-sm-4 d-flex align-items-center justify-content-center">
+                BMI值:
+                <span v-if="BMI == 0"> 請輸入資料</span>
+                <span v-else> {{ BMI }}</span>
+            </div>
+            <div class="col-sm-4 d-flex align-items-center justify-content-center">
+                <button type="button" class="btn btn-info btn-lg" @click="storeBMI">紀錄 BMI</button>            </div>
         </div>
         <div class="content mt-5">
             <ul class="list">
-                
+                <li class="d-flex justify-content-between" 
+                :class="item.bgColor"
+                v-for="(item, index) in list" :key="index">
+                    身高:{{item.height}} 體重:{{item.weight}} , 你的BMI值: {{item.BMInum}} 屬於 {{item.range}} 
+                    <button type="button" class="btn btn-danger" @click="removeList(index)">刪除</button>
+                </li>
             </ul>
         </div>
     </div>
@@ -33,6 +44,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
         crossorigin="anonymous"></script>
     <script src="all.js"></script>
+
 </body>
 
 </html>
