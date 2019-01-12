@@ -1,4 +1,4 @@
-alert("電腦控制:數字鍵 1,2,3,5 \n     ....宏宇留")
+alert("點擊改變方向 \n     ....宏宇留")
 var body = document.querySelector("body");
 var snake = document.querySelector("#snake").firstElementChild;
 
@@ -12,18 +12,36 @@ for (let i = 0; i < snake.childElementCount; i++) {
 var snakeBody = {
     start: ["5_0", "4_0", "3_0", "2_0", "1_0", "0_0"],
     dir: 51,
-    time: 100,
-    randomPoint: Math.floor(Math.random() * 30) + "_" + Math.floor(Math.random() * 50)
+    time: 150,
+    randomPoint:"",
 };
 
 //init data
-for (let i = 0; i < snakeBody.start.length; i++) {
-    toggleClass(document.getElementById(snakeBody.start[i]))
+function resetGame(){
+    for (let y = 0; y < snake.childElementCount;y++){
+        for(let x = 0;x< snake.children[y].childElementCount; x++){
+            const id = y + "_" + x;
+            let element = snake.children[y].children[x];  
+            console.log(element.className);          
+            if(element.className == 'black'){
+                element.className = "";
+            }
+        }
+    }
+    snakeBody.start = ["5_0", "4_0", "3_0", "2_0", "1_0", "0_0"];
+    snakeBody.dir = 51;
+    snakeBody.randomPoint = newRandom();
+    document.getElementById(snakeBody.randomPoint).classList = "black";
+    for (let i = 0; i < snakeBody.start.length; i++) {
+        toggleClass(document.getElementById(snakeBody.start[i]))
+    }
 }
-document.getElementById(snakeBody.randomPoint).classList = "black";
+
+resetGame();
+
 //隨機產點function
 function newRandom() {
-    newPoint = Math.floor(Math.random() * 30) + "_" + Math.floor(Math.random() * 50);
+    let newPoint = Math.floor(Math.random() * 30) + "_" + Math.floor(Math.random() * 50);
     for (let i = 0; i < snakeBody.start.length; i++) {
         if (snakeBody.start[i] == newPoint) newRandom();
     }
@@ -145,6 +163,12 @@ function death(p) {
     for (let i = 0; i < snakeBody.start.length; i++) {
         if (p == snakeBody.start[i]) {
             clearInterval(h);
+            alert('撞到尾巴嘍！');
+            setTimeout(() => {
+                alert('按下確定重新開始');
+                resetGame();
+                h = setInterval(move, snakeBody.time);
+            }, 1000);
         }
     }
 }
@@ -152,7 +176,7 @@ function death(p) {
 
 
 
-
+//轉換class
 function toggleClass(e) {
     if (e.classList == "black") {
         e.classList = "";
@@ -177,7 +201,7 @@ body.addEventListener("keypress", function (e) {
     }
 }, false)
 
-
+//計算元素於視窗位址
 function countClientXY(e){
     let x = 0,y=0;
     while(e.offsetParent != null) {
