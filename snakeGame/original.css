@@ -26,20 +26,7 @@ td {
     height: 50px;
 }
 
-#up {
-    left:185px;
-    top:130px;
-}
-#left {
-    left:35px;
-    top:260px;
-}
-#down{
-    left:185px;
-    top:400px;
-}
-#right{
-    left:350px;
-    top:260px;
+#snake td {
+    transition: all 0.2s;
 }
 

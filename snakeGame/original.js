@@ -1,4 +1,4 @@
-alert("點擊改變方向 \n     ....宏宇留")
+alert("點擊改變方向 \n或按鍵 A,S,D,W \n     ....宏宇留")
 var body = document.querySelector("body");
 var snake = document.querySelector("#snake").firstElementChild;
 
@@ -11,8 +11,8 @@ for (let i = 0; i < snake.childElementCount; i++) {
 // 蛇體資料
 var snakeBody = {
     start: ["5_0", "4_0", "3_0", "2_0", "1_0", "0_0"],
-    dir: 51,
-    time: 150,
+    dir: 100,
+    time: 120,
     randomPoint:"",
 };
 
@@ -21,19 +21,17 @@ function resetGame(){
     for (let y = 0; y < snake.childElementCount;y++){
         for(let x = 0;x< snake.children[y].childElementCount; x++){
             const id = y + "_" + x;
-            let element = snake.children[y].children[x];  
-            console.log(element.className);          
+            let element = snake.children[y].children[x];         
             if(element.className == 'black'){
                 element.className = "";
             }
         }
     }
     snakeBody.start = ["5_0", "4_0", "3_0", "2_0", "1_0", "0_0"];
-    snakeBody.dir = 51;
+    snakeBody.dir = 100;
     snakeBody.randomPoint = newRandom();
-    document.getElementById(snakeBody.randomPoint).classList = "black";
     for (let i = 0; i < snakeBody.start.length; i++) {
-        toggleClass(document.getElementById(snakeBody.start[i]))
+        toggleClass(document.getElementById(snakeBody.start[i]));
     }
 }
 
@@ -45,6 +43,7 @@ function newRandom() {
     for (let i = 0; i < snakeBody.start.length; i++) {
         if (snakeBody.start[i] == newPoint) newRandom();
     }
+    toggleClass(document.getElementById(newPoint));
     return newPoint;
 }
 
@@ -54,7 +53,7 @@ var h = setInterval(move, snakeBody.time)
 
 function move() {
     // 往右邏輯
-    if (snakeBody.dir == 51) {
+    if (snakeBody.dir == 100) {
         let sx = snakeBody.start[0].split("_")[0];
         let sy = snakeBody.start[0].split("_")[1];
         toggleClass(document.getElementById(snakeBody.start[snakeBody.start.length - 1]));
@@ -71,14 +70,13 @@ function move() {
             snakeBody.start.push(tail);
             snakeBody.start.unshift(newBlock);
             snakeBody.randomPoint = newRandom();
-            document.getElementById(snakeBody.randomPoint).classList = "black";
         } else {
             toggleClass(document.getElementById(newBlock));
             snakeBody.start.unshift(newBlock);
         }
     }
     //向上邏輯
-    else if (snakeBody.dir == 53) {
+    else if (snakeBody.dir == 119) {
         let sx = snakeBody.start[0].split("_")[0];
         let sy = snakeBody.start[0].split("_")[1];
         toggleClass(document.getElementById(snakeBody.start[snakeBody.start.length - 1]));
@@ -95,14 +93,13 @@ function move() {
             snakeBody.start.push(tail);
             snakeBody.start.unshift(newBlock);
             snakeBody.randomPoint = newRandom();
-            document.getElementById(snakeBody.randomPoint).classList = "black";
         } else {
             toggleClass(document.getElementById(newBlock));
             snakeBody.start.unshift(newBlock);
         }
     }
     //向左邏輯
-    else if (snakeBody.dir == 49) {
+    else if (snakeBody.dir == 97) {
         let sx = snakeBody.start[0].split("_")[0];
         let sy = snakeBody.start[0].split("_")[1];
         toggleClass(document.getElementById(snakeBody.start[snakeBody.start.length - 1]));
@@ -119,14 +116,13 @@ function move() {
             snakeBody.start.push(tail);
             snakeBody.start.unshift(newBlock);
             snakeBody.randomPoint = newRandom();
-            document.getElementById(snakeBody.randomPoint).classList = "black";
         } else {
             toggleClass(document.getElementById(newBlock));
             snakeBody.start.unshift(newBlock);
         }
     }
     //向下邏輯
-    else if (snakeBody.dir == 50) {
+    else if (snakeBody.dir == 115) {
         let sx = snakeBody.start[0].split("_")[0];
         let sy = snakeBody.start[0].split("_")[1];
         toggleClass(document.getElementById(snakeBody.start[snakeBody.start.length - 1]));
@@ -143,7 +139,6 @@ function move() {
             snakeBody.start.push(tail);
             snakeBody.start.unshift(newBlock);
             snakeBody.randomPoint = newRandom();
-            document.getElementById(snakeBody.randomPoint).classList = "black";
         } else {
             toggleClass(document.getElementById(newBlock));
             snakeBody.start.unshift(newBlock);
@@ -186,17 +181,17 @@ function toggleClass(e) {
 }
 // 移動按鍵監聽
 body.addEventListener("keypress", function (e) {
-    if (e.keyCode == 51) {
-        if (snakeBody.dir == 49) return;
+    if (e.keyCode == 100) {
+        if (snakeBody.dir == 97) return;
         snakeBody.dir = e.keyCode + "";
-    } else if (e.keyCode == 53) {
-        if (snakeBody.dir == 50) return;
+    } else if (e.keyCode == 119) {
+        if (snakeBody.dir == 115) return;
         snakeBody.dir = e.keyCode + "";
-    } else if (e.keyCode == 49) {
-        if (snakeBody.dir == 51) return;
+    } else if (e.keyCode == 97) {
+        if (snakeBody.dir == 100) return;
         snakeBody.dir = e.keyCode + "";
-    } else if (e.keyCode == 50) {
-        if (snakeBody.dir == 53) return;
+    } else if (e.keyCode == 115) {
+        if (snakeBody.dir == 119) return;
         snakeBody.dir = e.keyCode + "";
     }
 }, false)
@@ -220,17 +215,17 @@ body.addEventListener('click', function (e) {
     let tx = e.clientX;
     let ty = e.clientY;
     
-    if (snakeBody.dir == 49 ||snakeBody.dir ==51) {
+    if (snakeBody.dir == 97 ||snakeBody.dir ==100) {
         if(sy>ty){
-            snakeBody.dir = 53;
+            snakeBody.dir = 119;
         }else if(sy<ty){
-            snakeBody.dir = 50;
+            snakeBody.dir = 115;
         }
-    }else if (snakeBody.dir == 50 ||snakeBody.dir ==53) {
+    }else if (snakeBody.dir == 115 ||snakeBody.dir ==119) {
         if(sx>tx){
-            snakeBody.dir = 49;
+            snakeBody.dir = 97;
         }else if(sx<tx){
-            snakeBody.dir = 51;
+            snakeBody.dir = 100;
         }
     }
 }, false)

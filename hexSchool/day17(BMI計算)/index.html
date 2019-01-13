@@ -13,12 +13,12 @@
 
 <body>
     <div class="container" id="app">
-        <div class="row mt-5 p-4 bg-secondary text-light rounded">
+        <div class="row mt-5 p-4 bg-secondary text-light rounded shadow">
             <div class="col-sm-4" align="center">
                 <p class="p-3">身高 : <input v-model="inpHeight" type="text" name="height" id="height" style="width: 150px;" placeholder="單位 cm"></p>
                 <p class="p-3">體重 : <input v-model="inpWeight" type="text" name="weight" id="weight" style="width: 150px;" placeholder="單位 kg"></p>
             </div>
-            <div class="col-sm-4 d-flex align-items-center justify-content-center">
+            <div class="col-sm-4 d-flex align-items-center justify-content-center my-3">
                 BMI值:
                 <span v-if="BMI == 0"> 請輸入資料</span>
                 <span v-else> {{ BMI }}</span>
@@ -26,13 +26,15 @@
             <div class="col-sm-4 d-flex align-items-center justify-content-center">
                 <button type="button" class="btn btn-info btn-lg" @click="storeBMI">紀錄 BMI</button>            </div>
         </div>
-        <div class="content mt-5">
+        <div class="content mt-3">
             <ul class="list">
-                <li class="d-flex justify-content-between" 
+                <li class="d-flex justify-content-between my-3" 
                 :class="item.bgColor"
                 v-for="(item, index) in list" :key="index">
-                    身高:{{item.height}} 體重:{{item.weight}} , 你的BMI值: {{item.BMInum}} 屬於 {{item.range}} 
-                    <button type="button" class="btn btn-danger" @click="removeList(index)">刪除</button>
+                    <div class="m-3">
+                        身高:{{item.height}} 體重:{{item.weight}} , 你的BMI值: {{item.BMInum}} 屬於 {{item.range}}
+                    </div> 
+                    <button type="button" class="btn btn-outline-danger m-3" @click="removeList(index)">刪除</button>
                 </li>
             </ul>
         </div>

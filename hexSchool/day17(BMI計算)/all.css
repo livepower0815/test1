@@ -56,31 +56,51 @@ body {
 	font-size: 30px;
 }
 .list li {
-	padding: 10px;
-	border:2px solid black;
 	margin: 3px;
 	border-radius: 3px;
-	
+	background: rgb(245, 244, 244);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .list li a {
 	color: red;
 	float: right;
 }
-.color0 {
-	background: rgb(248, 240, 171);
+.shadow {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.color1 {
-	background: rgb(196, 222, 243);
+.color0::before {
+	content: "";
+	background: rgb(110, 232, 253);
+	width: 50px;
+	padding: auto 0;
 }
-.color2 {
-	background: rgb(248, 240, 171);
+.color1::before {
+	content: "";
+	background: rgb(166, 255, 139);
+	width: 50px;
+	padding: auto 0;
 }
-.color3 {
-	background: rgb(248, 215, 171);
+.color2::before {
+	content: "";
+	background: rgb(99, 185, 255);
+	width: 50px;
+	padding: auto 0;
 }
-.color4 {
-	background: rgb(248, 183, 171);
+.color3::before {
+	content: "";
+	background: rgb(255, 223, 82);
+	width: 50px;
+	padding: auto 0;
 }
-.color5 {
-	background: rgb(248, 171, 171);
+.color4::before {
+	content: "";
+	background: rgb(255, 126, 66);
+	width: 50px;
+	padding: auto 0;
+}
+.color5::before {
+	content: "";
+	background: rgb(255, 81, 81);
+	width: 50px;
+	padding: auto 0;
 }
