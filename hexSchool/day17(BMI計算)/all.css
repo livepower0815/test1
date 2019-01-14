@@ -51,7 +51,7 @@ a:hover ,a:visited ,a:active ,a:link {
 }
 
 body {
-	background-color: rgb(172, 236, 201);
+	background-color: rgb(59, 59, 59);
 	margin: 0 auto ;
 	font-size: 30px;
 }
@@ -67,6 +67,7 @@ body {
 }
 .shadow {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	background: rgb(149, 196, 240);
 }
 .color0::before {
 	content: "";
