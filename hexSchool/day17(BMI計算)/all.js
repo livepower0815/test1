@@ -40,7 +40,8 @@ var app = new Vue({
                 bgColor:bmiStandard[0],
                 range:bmiStandard[1],
             };
-            vm.list.push(BmiItem);
+            // 這邊使用 unshift 資料永遠都會在第一筆
+            vm.list.unshift(BmiItem);
             localStorage.localList = JSON.stringify(vm.list);
         },
         removeList(index) {
@@ -50,6 +51,7 @@ var app = new Vue({
         }
     },
     created() {
+        // 網頁一開始載入時讀取 localStorage
         const vm = this;
         vm.list = JSON.parse(localStorage.localList);
 
